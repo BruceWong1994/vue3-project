@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo-cdn</title>
+    <script src="./vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>第一个数字：{{ a }}</p>
+      <p>第二个数字：{{ b }}</p>
+      <p>和：{{ a+b }}</p>
+    </div>
+
+    <script>
+        //使用cdn开发vue
+      const { createApp, ref } = Vue;
+      createApp({
+        setup() {
+          const a = ref(15);
+          const b = ref(23);
+
+          return {
+            a,b
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式API</title>
+</head>
+<body>
+    <div id="id-reactive">
+        <span>{{ a }}</span>
+        <div><button @click="add">点击+10</button></div>
+        <div><button @click="toggle">切换元素显示不显示</button></div>
+        <p><span :class="color">{{ colortext }}</span><span v-show="dis">i am a display text</span></p>
+        <div>{{ addC }}</div>
+    </div>
+    
+    <script type="module">
+        import { createApp, ref, reactive, computed } from './vue.esm-browser.js'
+        createApp({
+            setup(){
+                const a = ref(0)
+                console.log(a.value)
+                let dis = ref(true)
+                let color = ref('green')
+                let colortext = ref('显示：')
+
+                const add = () => {
+                    a.value+=10
+                }
+
+                let addC = computed(()=>{
+                    return 155+46948
+                })
+
+                const toggle = () =>{
+                    dis.value= !dis.value
+                    console.log(dis.value);
+
+                    // color.value == 'green'? color.value = 'red' : color.value = 'green'
+                    color.value = (color.value == 'green'? 'red' : 'green')
+                    colortext.value = (colortext.value == '显示：'?'不显示':'显示：') 
+                }
+
+                return{
+                    a,
+                    dis,
+                    color,
+                    colortext,
+                    add,
+                    toggle,
+                    addC
+                }
+            }
+        }).mount('#id-reactive')
+        
+    </script>
+
+    <style>
+        .green{
+            color:green;
+        }
+        .red{
+            color:red
+        }
+    </style>
+</body>
+</html>
