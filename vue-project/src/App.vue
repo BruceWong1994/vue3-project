@@ -1,13 +1,17 @@
 <template>
   <!-- <TabPannel /> -->
-   <TabPannel />
-  <!-- <P1 /> -->
+   <!-- <ClassStyle /> -->
+    <!-- <ComputedPage /> -->
+     <!-- <DataForm /> -->
+      <VForPage />
 </template>
 
 <script setup>
 // import TabPannel from './components/TabPannel/TapPannel.vue';
-import TabPannel from './components/CompositionApi/ClassStyle.vue';
-// import P1 from "./new/p1.vue";
+// import ClassStyle from './components/CompositionApi/ClassStyle.vue';
+// import ComputedPage from './components/CompositionApi/ComputedPage.vue';
+// import DataForm from './components/CompositionApi/DataForm.vue';
+import VForPage from './components/CompositionApi/VForPage.vue';
 </script>
 
 <style>

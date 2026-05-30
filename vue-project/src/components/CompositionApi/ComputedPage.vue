@@ -1,7 +1,7 @@
 <template>
     <div class="outer">
-        <h4>组合式API：计算属性</h4>
-        <div>{{ a }}</div>
+        <h4>计算属性</h4>
+        <div>{{ age }}</div>
         <div>{{  fullName }}</div>
         <button @click="setNewValue">改名字</button>
     </div>
@@ -10,7 +10,7 @@
 <script setup>
     import {ref,computed} from 'vue';
 
-    const a = computed(()=>{
+    const age = computed(()=>{
         return 1+22
     })
     const firstName = ref('John')
@@ -18,7 +18,8 @@
     const fullName = computed({
         // getter
         get() {
-            return firstName.value + ' ' + lastName.value
+            // return firstName.value + ' ' + lastName.value
+            return `${firstName.value} ${lastName.value}`
         },
         // setter
         set(newValue) {
@@ -28,7 +29,7 @@
     })
     // console.log(fullName.value);
 
-    let setNewValue = () => {
+    const setNewValue = () => {
         fullName.value = 'Bruce Wang';
         // console.log(fullName.value);
         // console.log(firstName.value);

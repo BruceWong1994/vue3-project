@@ -3,11 +3,10 @@
 
     </div>
     <div class="maincontent">
-        <!-- <ComputedPage />
-        <ClassStyle1 />
-        <ClassStyle2 />
+        <ComputedPage />
+        <ClassStyle />
         <VFor />
-        <DataForm /> -->
+        <DataForm />
 
         <testPage />
     </div>
@@ -18,8 +17,7 @@
 
     import ComputedPage from '../CompositionApi/ComputedPage.vue';
 
-    import ClassStyle1 from '../CompositionApi/ClassStyle.vue';
-    import ClassStyle2 from '../OptionsApi/ClassStyle.vue';
+    import ClassStyle from '../CompositionApi/ClassStyle.vue';
 
     import VFor from '../CompositionApi/VForPage.vue';
 

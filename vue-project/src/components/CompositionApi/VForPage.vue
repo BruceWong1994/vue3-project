@@ -1,23 +1,23 @@
 <template>
     <div class="outer">
-        <h4>组合式API：v-for</h4>
+        <h4>v-for 与 父子传值</h4>
         
-        <VF 
+        <VFChild 
             v-for="item of items" 
             :item="item"
             :key="item.id"
         />
 
-        <div v-for="numbers in sets">
+        <!-- <div v-for="numbers in sets">
             <p v-for="n in even(numbers)">{{ n }}</p>
-        </div>
+        </div> -->
     </div>
 </template>
 
 <script setup>
-    import VF from '../CompositionApi/VForChild.vue';
+    import VFChild from '../CompositionApi/VForChild.vue';
     import {ref,reactive} from 'vue';
-    const items = reactive([
+    const items = ref([
         {id:1,name:"bruce"},
         {id:2,name:"nico"},
         {id:3,name:"xiaobai"},
@@ -25,14 +25,14 @@
         {id:5,name:"nuomi"}
     ])
 
-    const sets = ref([
-        [1, 2, 3, 4, 5],
-        [6, 7, 8, 9, 10]
-    ])
+    // const sets = ref([
+    //     [1, 2, 3, 4, 5],
+    //     [6, 7, 8, 9, 10]
+    // ])
 
-    function even(numbers) {
-        return numbers.filter((number) => number % 2 === 0)
-    }
+    // function even(numbers) {
+    //     return numbers.filter((number) => number % 2 === 0)
+    // }
     
 </script>
 

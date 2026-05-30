@@ -1,6 +1,6 @@
 <template>
     <div class="outer">
-        <h4>组合式API：Class 与 Style 绑定</h4>
+        <h4>Class 与 Style 绑定</h4>
         <!-- <div class="static" :class='{active:isActive,textDanger:isDanger}'>{{ a }}</div> -->
         <div class="names" :class= classObject >this is a test text</div>
         <button @click="changeColor">换个颜色</button>
